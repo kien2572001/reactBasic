@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+/******** General Styles ********/
+
+.html {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    margin-top: 40px;
+    width: 900px;
+    margin: auto;
+    background-color: #ffffff;
+    color: black;
+    overflow: auto;
+    .wrapper{
+        width: 700px;
+        margin: auto;
+    }
+
+    h3{
+        margin: 20px 10px;
+        padding: 0;
+    }
+
+    .input{
+        height: 35px;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+    .input_task {
+        width: 610px;
+        height: 35px;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .input_search{
+        width: 300px;
+        left: 0;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .add-btn {
+        width: 90px;
+        height: 35px;
+        border: 1px solid darken(#22313F, 10%);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        background-color: #22313F;
+        color: #fff;
+        box-sizing: border-box;
+        
+        &:hover, &:focus {
+            background: darken(#22313F, 10%);
+            color: #fff;
+            //cursor: pointer;
+          }
+    }
+    
+    .empty-input{
+        cursor: not-allowed;
+        opacity: 0.65;
+    }
+    .list{
+        width: 100%;
+        display: block;
+
+        .item{
+            margin: 10px 0px;
+            display: block;
+            text-align: left;
+            
+            .checkbox-input {
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                vertical-align: middle;
+                //opacity: 0;
+                margin-right: 10px;
+            }
+
+
+
+            .remove-btn {
+                background: #E74C3C;
+                border: 1px solid darken(#E74C3C, 10%);
+                color: #fff;
+                float: right;
+                &:hover, &:focus {
+                  background: darken(#E74C3C, 10%);
+                  color: #fff;
+                }
+                display: inline-block;
+                padding: 6px 12px;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.42857143;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-image: none;
+                border: 1px solid transparent;
+                border-radius: 4px;
+            }
+
+            .space-btn{
+                margin-right: 10px;
+            }
+
+            span{
+                font-size: 18px;
+                line-height: 1.42857143;
+                color: #333;
+            }
+        }
+    }
+    
+}
+
+
+

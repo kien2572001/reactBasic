@@ -1,25 +1,28 @@
 import React from 'react';
 import Child from './Child';
+import AddComponent from './AddComponent';
 
 class Car extends React.Component{
 
-    state = {
-        firstName: '',
-        lastName: '',
+    state = {        
         carList: [
             {
+                id: '1',
                 carName: 'Toyota',
                 price: '100'
             },
             {
+                id: '2',
                 carName: 'Lamborghini',
                 price: '200'
             },
             {
+                id: '3',
                 carName: 'Honda',
                 price: '300'
             },
             {
+                id: '4',
                 carName: 'Mercedes',
                 price: '400'
             }
@@ -27,50 +30,36 @@ class Car extends React.Component{
     }
 
 
-    handleChangeFirstName = (e)=>{
+    addNewCar = (newCar)=>{
+        console.log('add a new car')
+        let list = this.state.carList
+        list.push(newCar)
         this.setState({
-            firstName: e.target.value
+            carList: list
         })
     }
 
-    handleChangeLastName = (e)=>{
+    deleteACar = (car)=>{
+        console.log('delete a car')
+        let arr = this.state.carList
+        let tempArr = arr.filter(item => item.id !== car.id)
+        console.log(tempArr)
         this.setState({
-            lastName: e.target.value
+            carList: tempArr
         })
-    }
-
-    handleOnClick = (e)=>{
-        console.log(this.state)
     }
 
     render(){
 
         return (
             <React.Fragment>
-                <div>Hello</div>
-                <form>
-                    <label htmlFor="fname">First name:</label><br/>
-                    <input 
-                        type="text" 
-                        value={this.state.firstName} 
-                        onChange={(e)=>this.handleChangeFirstName(e)}
-                        /><br/>
-                    <label htmlFor="lname">Last name:</label><br/>
-                    <input 
-                        type="text" 
-                        value={this.state.lastName}
-                        onChange={(e)=>this.handleChangeLastName(e)}
-                        />
-                    <br/>
-                    <br/>
-                    <input
-                        type="button"
-                        value="Submit"
-                        onClick={(e)=>this.handleOnClick(e)}
-                    />
-                </form>
+                <AddComponent
+                    addNewCar = {this.addNewCar}
+                />
+                
                 <Child        
                     carList = {this.state.carList}
+                    deleteCar = {this.deleteACar}
                 />
             </React.Fragment>
             
